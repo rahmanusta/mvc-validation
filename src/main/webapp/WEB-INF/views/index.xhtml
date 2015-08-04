@@ -1,0 +1,41 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough" xmlns:jsf="http://xmlns.jcp.org/jsf">
+<head>
+    <title>JSF 2.2 HTML5 Support</title>
+    <meta charset="utf-8"/>
+    <link href="foundation.css" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="row">
+    <div class="columns large-6 large-push-3">
+
+        <form method="post" action="/MVC-Validation/app/postdata">
+            <div class="row">
+                <div class="large-12 columns #{error!=null ? 'error': ''} ">
+                    <label>
+                        <input type="text" placeholder="Enter name"/>
+                    </label>
+                    <small jsf:rendered="#{error != null}" class="error">#{error.name}</small>
+                </div>
+                <div class="large-12 columns #{error!=null ? 'error': ''}">
+                    <label>
+                        <input type="number" placeholder="Enter age"/>
+                    </label>
+                    <small jsf:rendered="#{error != null}" class="error">#{error.age}</small>
+                </div>
+                <div class="large-12 columns  #{error!=null ? 'error': ''}">
+                    <label>
+                        <input type="email" placeholder="Enter email"/>
+                    </label>
+                    <small jsf:rendered="#{error != null}" class="error">#{error.email}</small>
+                </div>
+            </div>
+            <button type="submit">Gönder</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
